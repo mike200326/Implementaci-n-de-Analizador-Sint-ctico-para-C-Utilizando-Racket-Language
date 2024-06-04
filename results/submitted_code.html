@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Highlighter</title>
+    <style>
+    .keywords { color: blue; font-weight: bold; }
+    .strings { color: green; }
+    .chars { color: orange; }
+    .comments { color: gray; font-style: italic; }
+    .numbers { color: red; }
+    .preprocessor { color: purple; font-weight: bold; }
+    </style>
+</head>
+<body>
+<h1>C++ Highlighter</h1>
+<pre><code><span class='chars'><!--preprocessor--></span>#include <iostream>
+
+<span class='chars'><!--preprocessor--></span>#include <vector>
+
+<span class='keywords'>using</span> <span class='keywords'>namespace</span> std;
+
+<span class='keywords'>int</span> main() {
+
+    vector<<span class='keywords'>int</span>> numbers = {<span class='numbers'>1</span>, <span class='numbers'>2</span>, <span class='numbers'>3</span>, <span class='numbers'>4</span>, <span class='numbers'>5</span>};
+
+    <span class='comments'>// Print numbers</span>
+
+    <span class='keywords'>for</span> (<span class='keywords'>int</span> i = <span class='numbers'>0</span>; i < numbers.size(); ++i) {
+        cout << numbers[i] << <span class='strings'>" "</span>;
+    }
+
+    cout << endl;
+
+    <span class='keywords'>return</span> <span class='numbers'>0</span>;
+}
+
+</code></pre>
+</body>
+</html>

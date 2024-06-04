@@ -1,0 +1,26 @@
+.keywords {
+  color: blue;
+  font-weight: bold;
+}
+
+.strings {
+  color: green;
+}
+
+.chars {
+  color: orange;
+}
+
+.comments {
+  color: gray;
+  font-style: italic;
+}
+
+.numbers {
+  color: red;
+}
+
+.preprocessor {
+  color: purple;
+  font-weight: bold;
+}

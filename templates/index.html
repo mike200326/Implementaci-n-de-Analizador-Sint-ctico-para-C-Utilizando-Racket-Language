@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Code Highlighter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Enter Your C++ Code</h1>
+    <form action="/" method="post">
+        <textarea name="code" rows="20" cols="80" placeholder="Enter C++ code here...">{{ code if code else "" }}</textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if content %}
+    <h1>Highlighted C++ Code</h1>
+    <div>
+        {{ content | safe }}
+    </div>
+    {% endif %}
+</body>
+</html>

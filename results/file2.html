@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>C++ Highlighter</title>
+            <style>
+            .keywords { color: blue; font-weight: bold; }
+            .strings { color: green; }
+            .chars { color: orange; }
+            .comments { color: gray; font-style: italic; }
+            .numbers { color: red; }
+            .preprocessor { color: purple; font-weight: bold; }
+            </style>
+        </head>
+        <body>
+        <h1>C++ Highlighter</h1>
+        <pre><code><span class=<span class='chars'>'preprocessor'</span>>#include</span> <lt;iostream>gt;
+<span class=<span class='chars'>'keywords'</span>>using</span> <span class=<span class='chars'>'keywords'</span>>namespace</span> std;
+
+<span class=<span class='chars'>'keywords'</span>>class</span> Rectangle {
+<span class=<span class='chars'>'keywords'</span>>private</span>:
+    <span class=<span class='chars'>'keywords'</span>>int</span> width, height;
+<span class=<span class='chars'>'keywords'</span>>public</span>:
+    <span class=<span class='chars'>'keywords'</span>>void</span> set_values(<span class=<span class='chars'>'keywords'</span>>int</span>, <span class=<span class='chars'>'keywords'</span>>int</span>);
+    <span class=<span class='chars'>'keywords'</span>>int</span> area() {
+        <span class=<span class='chars'>'keywords'</span>>return</span> width * height;
+    }
+};
+
+<span class=<span class='chars'>'keywords'</span>>void</span> Rectangle::set_values(<span class=<span class='chars'>'keywords'</span>>int</span> w, <span class=<span class='chars'>'keywords'</span>>int</span> h) {
+    width = w;
+    height = h;
+}
+
+<span class=<span class='chars'>'keywords'</span>>int</span> main() {
+    Rectangle rect;
+    rect.set_values(<span class='numbers'>3</span>, <span class='numbers'>4</span>);
+    cout <lt;<lt; <span class=<span class='chars'>'strings'</span>>"quot;Area: "</span>quot; <lt;<lt; rect.area() <lt;<lt; endl;
+    <span class=<span class='chars'>'keywords'</span>>return</span> <span class='numbers'>0</span>;
+}
+</code></pre>
+        </body>
+        </html>

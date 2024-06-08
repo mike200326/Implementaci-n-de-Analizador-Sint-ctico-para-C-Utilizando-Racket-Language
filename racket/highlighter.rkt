@@ -121,7 +121,7 @@
         </body>
         </html>"
         out)))
-  (displayln (string-append "Archivo de salida creado exitosamente: " out-path)))
+  (printf (string-append "Archivo de salida creado exitosamente: " out-path "\n")))
 
 ; Crear archivos HTML con sintaxis resaltada para todos los archivos C++ en un directorio dado
 (define (write-files dir-path)
@@ -147,6 +147,7 @@
         [else
           (write-file (string-append dir-path "/" (car lst)))
           (loop (cdr lst))]))))))
+
 
 ; Ejecución concurrente
 (define (write-files-parallel dir-path threads)
@@ -185,7 +186,7 @@
 (define (main)
   (define single-file "examples/file1.cpp")
   (define dir-path "examples")
-  (define threads 4) ; Número de hilos a utilizar
+  (define threads 2) ; Número de hilos a utilizar
 
   ; Asegurar que el directorio de resultados esté creado
   (unless (directory-exists? "results")
@@ -199,10 +200,22 @@
   (define time-total (timer single-file))
   (displayln (string-append "Tiempo de ejecución para write-file: " (number->string time-total) " ms"))
 
+  ; Apartado de paralelo
+  (displayln "Procesando archivos en secuencia...")
+  (define tiempo-secuencial (current-inexact-milliseconds))
+  (write-files dir-path)
+  (define tiempo-final (- (current-inexact-milliseconds) tiempo-secuencial))
+  (displayln "========================================")
+  (displayln (string-append "Tiempo de ejecución en secuencial (5 archivos):" (number->string tiempo-final) " ms"))
+
   ; Procesar archivos en paralelo
   (displayln "Procesando archivos en paralelo...")
+  (define time-parallel-start (current-inexact-milliseconds))
   (write-files-parallel dir-path threads)
-  (displayln "Procesamiento en paralelo completado."))
+  (displayln "Procesamiento en paralelo completado.")
+  (define tiempo-paralelo (- (current-inexact-milliseconds) time-parallel-start))
+  (displayln "========================================")
+  (displayln (string-append "Tiempo de ejecución en paralelo (5 archivos): " (number->string tiempo-paralelo) " ms")))
 
 ; Ejecutar la función principal
 (main)

@@ -1,8 +1,13 @@
+; Fernando Emiliano Tavera Moreno A01663082
+; Miguel Ángel Ogando Bautista A01663053
+; Ángel Orlando Vázquez Morales A01659000
+; Gerardo Alavez Mejía A01276189
+
 #lang racket
 
 (require racket/future)
 
-; Función auxiliar para leer el contenido del archivo en líneas
+; Función para leer el contenido del archivo en líneas
 (define (file->lines file)
   (displayln (string-append "Leyendo archivo: " file))
   (call-with-input-file file
@@ -15,7 +20,7 @@
                 (reverse lines))
               (loop (cons line lines))))))))
 
-; Función auxiliar para escribir líneas en un archivo
+; Función para escribir líneas en un archivo
 (define (display-lines-to-file lines file #:exists exists)
   (displayln (string-append "Escribiendo en archivo: " file))
   (call-with-output-file file #:exists exists
@@ -85,7 +90,6 @@
             <meta charset=\"UTF-8\">
             <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
             <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-            <title>Resaltador de C++</title>
             <style>
             .keywords { color: blue; font-weight: bold; }
             .strings { color: green; }
@@ -97,21 +101,20 @@
             </style>
         </head>
         <body>
-        <h1>Resaltador de C++</h1>
         <pre><code>"
         out)))
 
   ; Agregar sintaxis resaltada
   (display-lines-to-file (replace-match in-path) out-path #:exists 'append)
 
-  ; Agregar el recuadro en la parte inferior con el resultado de la verificación de sintaxis
+  ; Agregar verificación de sintaxis
   (call-with-output-file out-path #:exists 'append
     (lambda (out)
       (define syntax-result (check-syntax in-path))
       (display (string-append "<div class=\"footer\">" syntax-result "</div>")
         out)))
 
-  ; Cerrar la etiqueta HTML
+  ; Cerrar etiqueta HTML
   (call-with-output-file out-path #:exists 'append
     (lambda (out)
       (display "</code></pre>
@@ -166,13 +169,13 @@
       [(= counter threads)
         (loop empty (append futures (make-threads files dir-path)) counter total-files)])))
 
-; Medir tiempo de ejecución para todo el algoritmo, toma "<nombre_archivo>.cpp"
+; Medir tiempo de ejecución para todo el algoritmo
 (define (timer doc)
   (define begin (current-inexact-milliseconds))
   (write-file doc)
   (- (current-inexact-milliseconds) begin))
 
-; Medir tiempo de ejecución para la función replace-match, toma "<nombre_archivo>.cpp"
+; Medir tiempo de ejecución para la función replace-match
 (define (timer2 doc)
   (define begin (current-inexact-milliseconds))
   (replace-match doc)
@@ -189,7 +192,12 @@
     (make-directory "results"))
 
    ; Medir e imprimir tiempo de ejecución para la función replace-match
-  (displayln (string-append "Tiempo de ejecución para replace-match: " (number->string (timer2 single-file)) " ms"))
+  (define time-replace-match (timer2 single-file))
+  (displayln (string-append "Tiempo de ejecución para replace-match: " (number->string time-replace-match) " ms"))
+
+  ; Medir e imprimir tiempo de ejecución para todo el algoritmo
+  (define time-total (timer single-file))
+  (displayln (string-append "Tiempo de ejecución para write-file: " (number->string time-total) " ms"))
 
   ; Procesar archivos en paralelo
   (displayln "Procesando archivos en paralelo...")

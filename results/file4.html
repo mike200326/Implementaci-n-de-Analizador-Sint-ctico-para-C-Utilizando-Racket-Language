@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+            .keywords { color: blue; font-weight: bold; }
+            .strings { color: green; }
+            .chars { color: orange; }
+            .comments { color: gray; font-style: italic; }
+            .numbers { color: red; }
+            .preprocessor { color: purple; font-weight: bold; }
+            .footer { margin-top: 20px; border: 1px solid #ccc; padding: 10px; background-color: #f0f0f0; }
+            </style>
+        </head>
+        <body>
+        <pre><code><span class=preprocessor>#include</span> &lt;iostream&gt;
+<span class=preprocessor>#include</span> &lt;vector&gt;
+
+<span class=keywords>void</span> printNumbers(<span class=keywords>const</span> std::vector&lt;<span class=keywords>int</span>&gt;& numbers) {
+    <span class=keywords>for</span> (<span class=keywords>int</span> num : numbers) {
+        std::cout &lt;&lt; num &lt;&lt; <span class=strings>" "</span>;
+    }
+    std::cout &lt;&lt; std::endl;
+}
+
+<span class=keywords>void</span> printSquares(<span class=keywords>const</span> std::vector&lt;<span class=keywords>int</span>&gt;& numbers) {
+    <span class=keywords>for</span> (<span class=keywords>int</span> num : numbers) {
+        std::cout &lt;&lt; num * num &lt;&lt; <span class=strings>" "</span>;
+    }
+    std::cout &lt;&lt; std::endl;
+}
+
+<span class=keywords>void</span> printCubes(<span class=keywords>const</span> std::vector&lt;<span class=keywords>int</span>&gt;& numbers) {
+    <span class=keywords>for</span> (<span class=keywords>int</span> num : numbers) {
+        std::cout &lt;&lt; num * num * num &lt;&lt; <span class=strings>" "</span>;
+    }
+    std::cout &lt;&lt; std::endl;
+}
+
+<span class=keywords>int</span> main() {
+    std::vector&lt;<span class=keywords>int</span>&gt; numbers;
+    <span class=keywords>for</span> (<span class=keywords>int</span> i = <span class=numbers>1</span>; i &lt;= <span class=numbers>20</span>; ++i) {
+        numbers.push_back(i);
+    }
+
+    std::cout &lt;&lt; <span class=strings>"Numbers: "</span>;
+    printNumbers(numbers);
+
+    std::cout &lt;&lt; <span class=strings>"Squares: "</span>;
+    printSquares(numbers);
+
+    std::cout &lt;&lt; <span class=strings>"Cubes: "</span>;
+    printCubes(numbers);
+
+    <span class=keywords>int</span> a = <span class=numbers>5</span>;
+    <span class=keywords>int</span> b = <span class=numbers>10</span>;
+    <span class=keywords>int</span> c = <span class=numbers>15</span>;
+    <span class=keywords>int</span> d = <span class=numbers>20</span>;
+    <span class=keywords>int</span> sum = a + b + c + d;
+    <span class=keywords>int</span> product = a * b * c * d;
+    std::cout &lt;&lt; <span class=strings>"Sum: "</span> &lt;&lt; sum &lt;&lt; std::endl;
+    std::cout &lt;&lt; <span class=strings>"Product: "</span> &lt;&lt; product &lt;&lt; std::endl;
+
+    <span class=keywords>if</span> (sum &gt; product) {
+        std::cout &lt;&lt; <span class=strings>"Sum is greater than product."</span> &lt;&lt; std::endl;
+    } <span class=keywords>else</span> {
+        std::cout &lt;&lt; <span class=strings>"Product is greater than or equal to sum."</span> &lt;&lt; std::endl;
+    }
+
+    <span class=keywords>for</span> (<span class=keywords>int</span> i = <span class=numbers>1</span>; i &lt;= <span class=numbers>5</span>; ++i) {
+        std::cout &lt;&lt; <span class=strings>"Number: "</span> &lt;&lt; i &lt;&lt; <span class=strings>", Square: "</span> &lt;&lt; i * i &lt;&lt; <span class=strings>", Cube: "</span> &lt;&lt; i * i * i &lt;&lt; std::endl;
+    }
+
+    <span class=keywords>return</span> <span class=numbers>0</span>;
+}
+<div class="footer">sintaxis correcta</div></code></pre>
+        </body>
+        </html>

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-        <html lang="en">
+        <html lang="es">
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>C++ Highlighter</title>
             <style>
             .keywords { color: blue; font-weight: bold; }
             .strings { color: green; }
@@ -12,34 +11,34 @@
             .comments { color: gray; font-style: italic; }
             .numbers { color: red; }
             .preprocessor { color: purple; font-weight: bold; }
+            .footer { margin-top: 20px; border: 1px solid #ccc; padding: 10px; background-color: #f0f0f0; }
             </style>
         </head>
         <body>
-        <h1>C++ Highlighter</h1>
-        <pre><code><span class=<span class='chars'>'preprocessor'</span>>#include</span> <lt;iostream>gt;
-<span class=<span class='chars'>'keywords'</span>>using</span> <span class=<span class='chars'>'keywords'</span>>namespace</span> std;
+        <pre><code><span class=preprocessor>#include</span> &lt;iostream&gt;
+<span class=keywords>using</span> <span class=keywords>namespace</span> std;
 
-<span class=<span class='chars'>'keywords'</span>>class</span> Rectangle {
-<span class=<span class='chars'>'keywords'</span>>private</span>:
-    <span class=<span class='chars'>'keywords'</span>>int</span> width, height;
-<span class=<span class='chars'>'keywords'</span>>public</span>:
-    <span class=<span class='chars'>'keywords'</span>>void</span> set_values(<span class=<span class='chars'>'keywords'</span>>int</span>, <span class=<span class='chars'>'keywords'</span>>int</span>);
-    <span class=<span class='chars'>'keywords'</span>>int</span> area() {
-        <span class=<span class='chars'>'keywords'</span>>return</span> width * height;
+<span class=keywords>class</span> Rectangle {
+<span class=keywords>private</span>:
+    <span class=keywords>int</span> width, height;
+<span class=keywords>public</span>:
+    <span class=keywords>void</span> set_values(<span class=keywords>int</span>, <span class=keywords>int</span>);
+    <span class=keywords>int</span> area() {
+        <span class=keywords>return</span> width * height;
     }
 };
 
-<span class=<span class='chars'>'keywords'</span>>void</span> Rectangle::set_values(<span class=<span class='chars'>'keywords'</span>>int</span> w, <span class=<span class='chars'>'keywords'</span>>int</span> h) {
+<span class=keywords>void</span> Rectangle::set_values(<span class=keywords>int</span> w, <span class=keywords>int</span> h) {
     width = w;
     height = h;
 }
 
-<span class=<span class='chars'>'keywords'</span>>int</span> main() {
+<span class=keywords>int</span> main() {
     Rectangle rect;
-    rect.set_values(<span class='numbers'>3</span>, <span class='numbers'>4</span>);
-    cout <lt;<lt; <span class=<span class='chars'>'strings'</span>>"quot;Area: "</span>quot; <lt;<lt; rect.area() <lt;<lt; endl;
-    <span class=<span class='chars'>'keywords'</span>>return</span> <span class='numbers'>0</span>;
+    rect.set_values(<span class=numbers>3</span>, <span class=numbers>4</span>);
+    cout &lt;&lt; <span class=strings>"Area: "</span> &lt;&lt; rect.area() &lt;&lt; endl;
+    <span class=keywords>return</span> <span class=numbers>0</span>;
 }
-</code></pre>
+<div class="footer">sintaxis correcta</div></code></pre>
         </body>
         </html>

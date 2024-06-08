@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-        <html lang="en">
+        <html lang="es">
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>C++ Highlighter</title>
             <style>
             .keywords { color: blue; font-weight: bold; }
             .strings { color: green; }
@@ -12,18 +11,18 @@
             .comments { color: gray; font-style: italic; }
             .numbers { color: red; }
             .preprocessor { color: purple; font-weight: bold; }
+            .footer { margin-top: 20px; border: 1px solid #ccc; padding: 10px; background-color: #f0f0f0; }
             </style>
         </head>
         <body>
-        <h1>C++ Highlighter</h1>
-        <pre><code><span class=<span class='chars'>'preprocessor'</span>>#include</span> <lt;iostream>gt;
-<span class=<span class='chars'>'keywords'</span>>using</span> <span class=<span class='chars'>'keywords'</span>>namespace</span> std;
+        <pre><code><span class=preprocessor>#include</span> &lt;iostream&gt;
+<span class=keywords>using</span> <span class=keywords>namespace</span> std;
 
-<span class=<span class='chars'>'keywords'</span>>int</span> main() {
-    <span class='comments'>// Print Hello World</span>
-    cout <lt;<lt; <span class=<span class='chars'>'strings'</span>>"quot;Hello, World!"</span>quot; <lt;<lt; endl;
-    <span class=<span class='chars'>'keywords'</span>>return</span> <span class='numbers'>0</span>;
+<span class=keywords>int</span> main() {
+    <span class=comments>// Print Hello World</span>
+    cout &lt;&lt; <span class=strings>"Hello, World!"</span> &lt;&lt; endl;
+    <span class=keywords>return</span> <span class=numbers>0</span>;
 }
-</code></pre>
+<div class="footer">sintaxis correcta</div></code></pre>
         </body>
         </html>
